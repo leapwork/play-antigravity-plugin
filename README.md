@@ -1,32 +1,49 @@
 # Leapwork Play for Google Antigravity
 
-Create, record, run and debug [Leapwork Play](https://leapwork.ai/) tests from the Antigravity agent, using your own Leapwork Play account.
+Build, run and fix [Playwright](https://playwright.dev/)-based tests in [Leapwork Play](https://leapwork.ai/) without leaving Antigravity. Your agent can create and record tests, run them and whole runlists, debug failures, build agents, and hand bigger jobs to Play's AI workflows. It works with your own Leapwork Play account.
 
-## Install
+<!-- TODO: add a screenshot or short GIF: sign-in, then a prompt, then the resulting test -->
 
-```bash
-agy plugin install https://github.com/leapwork/play-antigravity-plugin
-```
+## What you can do
 
-The first time the agent uses Leapwork Play, sign in in the browser window that opens. If a call later returns `Unauthorized`, sign in again under **MCP Servers**.
+| Area | Examples |
+| --- | --- |
+| **Create** | Create test cases, or generate them from specs you upload to a knowledge base |
+| **Record** | Describe a flow in plain English and Play records it as Playwright steps in a cloud browser |
+| **Run** | Run a test case or a whole runlist, now or on a schedule, and see the results |
+| **Debug and fix** | Find out why a run failed, fix the failing step, and rerun only the failed steps |
+| **Build agents** | Create Leapwork agents that run on a schedule, an event or an API call |
 
-## Local setup
+## The Leapwork Play MCP server
 
-1. Clone this repository.
-2. Point `~/.gemini/config/plugins.json` at the clone:
+The plugin connects Antigravity to the Leapwork Play MCP server at `https://mcp.leapwork.ai/mcp`. You sign in with your Leapwork Play account the first time the agent uses it, and every call runs with your own permissions. The server gives the agent these tools:
 
-   ```json
-   { "entries": [ { "path": "C:/path/to/play-antigravity-plugin" } ] }
-   ```
+| Tool | What it does |
+| --- | --- |
+| `play_get_skill` | Step-by-step instructions for a job, such as creating, running or debugging a test |
+| `play_list_capabilities` | Lists everything Leapwork Play can do directly |
+| `play_call_capability` | Runs one or more of those capabilities, such as creating a test case or starting a run |
+| `play_call_workflow` | Hands a bigger job to Leapwork Play's AI, such as recording steps in a browser or fixing Playwright code |
+| `play_get_pending` | Checks on a request that is still running or waiting for an answer |
+| `play_respond` | Sends your answer to a question or approval from Leapwork Play |
+| `play_cancel_workflow` | Stops a request that is still running |
+| `play_get_artifacts` | Gets the screenshots and videos of a test run |
 
-3. Restart Antigravity and check **Customizations → Installed** for **Leapwork Play**. Later edits are picked up without a restart.
+## Requirements
 
-## Try
+- A [Leapwork Play](https://leapwork.ai/) account. <!-- TODO: add sign-up link and note any free tier/trial -->
+- Google Antigravity <!-- TODO: minimum version --> with the `agy` CLI available.
+
+
+## Try it
 
 - "Create a test case for this bug in Leapwork."
 - "Go to example.com, search for pencil, and record it as a Leapwork test."
 - "Run TC-28 and tell me why it failed."
+- "Run the smoke suite and summarise the failures."
+- "Update TC-28 to match the new login page."
 
-## Limitations
+---
 
-Antigravity cannot show Leapwork Play's confirmation dialogs yet, so deletes and plan approvals have to be done in Leapwork Play.
+Playwright is a trademark of Microsoft Corporation. This project is not affiliated with or endorsed by Microsoft.
+ 
