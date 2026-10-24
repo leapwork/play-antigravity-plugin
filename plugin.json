@@ -1,0 +1,10 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "leapwork-play",
+  "displayName": "Leapwork Play",
+  "logo": "logo.png",
+  "description": "Create, run and debug Leapwork Play tests and runlists, build agents, and hand work to Play's AI workflows, right from Antigravity.",
+  "author": "Leapwork",
+  "homepage": "https://leapwork.ai/",
+  "repository": "https://github.com/leapwork/play-antigravity-plugin"
+}
