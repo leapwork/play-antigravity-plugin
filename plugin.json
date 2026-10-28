@@ -2,9 +2,26 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "leapwork-play",
   "displayName": "Leapwork Play",
+  "version": "1.0.0",
   "logo": "logo.png",
   "description": "Create, run and debug Leapwork Play tests and runlists, build agents, and hand work to Play's AI workflows, right from Antigravity.",
-  "author": "Leapwork",
+  "author": {
+    "name": "Leapwork",
+    "url": "https://leapwork.ai/"
+  },
   "homepage": "https://leapwork.ai/",
-  "repository": "https://github.com/leapwork/play-antigravity-plugin"
+  "repository": "https://github.com/leapwork/play-antigravity-plugin",
+  "keywords": [
+    "leapwork",
+    "testing",
+    "playwright",
+    "test-automation",
+    "qa",
+    "mcp"
+  ],
+  "suggestedPrompts": [
+    "Create a test case for this bug in Leapwork",
+    "Run my Leapwork runlist and show me what failed",
+    "Find out why my last Leapwork run failed and fix the failing step"
+  ]
 }
