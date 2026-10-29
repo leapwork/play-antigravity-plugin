@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="play-logo-light-v-c.svg">
+  <img src="play-logo-dark-v-c.svg" alt="Leapwork Play" width="200">
+</picture>
+
 # Leapwork Play for Google Antigravity
 
 Build, run and fix [Playwright](https://playwright.dev/)-based tests in [Leapwork Play](https://leapwork.ai/) without leaving Antigravity. Your agent can create and record tests, run them and whole runlists, debug failures, build agents, and hand bigger jobs to Play's AI workflows. It works with your own Leapwork Play account.
